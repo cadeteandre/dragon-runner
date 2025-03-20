@@ -166,15 +166,15 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
           >
-            <div className="relative z-10 bg-gradient-to-br from-gray-900 to-black p-2 rounded-3xl border border-white/10 shadow-2xl shadow-red-500/10 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-amber-500/20 backdrop-blur-3xl" />
+            <div className="relative z-10 bg-gradient-to-br from-gray-900 to-black p-2 rounded-3xl border border-white/10 shadow-2xl shadow-red-500/10 overflow-hidden max-h-[600px]">
+              {/* <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-amber-500/20 backdrop-blur-3xl" /> */}
 
               <div className="relative z-10 bg-black rounded-2xl overflow-hidden aspect-[9/16] md:aspect-[9/19]">
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black">
                   {/* App UI mockup */}
                   <div className="h-full flex flex-col">
                     {/* App header */}
-                    <div className="p-4 border-b border-white/10 flex items-center justify-between">
+                    <div className="p-2 border-b border-white/10 flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <DragonLogo className="h-6 w-6 text-red-500" />
                         <span className="font-bold text-white">DragonRunner</span>
@@ -183,7 +183,7 @@ export default function HeroSection() {
                     </div>
 
                     {/* App content */}
-                    <div className="flex-1 p-4 space-y-4">
+                    <div className="p-2 space-y-4">
                       <div className="space-y-2">
                         <h3 className="text-white font-bold">Hello, Runner!</h3>
                         <p className="text-white/60 text-sm">{"Let's track your progress"}</p>
@@ -282,7 +282,7 @@ export default function HeroSection() {
 
             {/* Floating badges */}
             <motion.div
-              className="absolute -left-10 top-1/4 bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/10 shadow-xl"
+              className="absolute -left-2 top-70 bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/10 shadow-xl z-20"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 2.5, duration: 0.5 }}
@@ -300,7 +300,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="absolute -right-5 bottom-1/3 bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/10 shadow-xl"
+              className="absolute -right-2 bottom-35 bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/10 shadow-xl z-20"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 2.7, duration: 0.5 }}

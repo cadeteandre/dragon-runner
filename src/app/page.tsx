@@ -137,7 +137,7 @@ export default function HeroSection() {
                   variant="outline"
                   className="text-black border-white/20 hover:bg-white/10 hover:text-white h-14 px-8 text-lg rounded-xl"
                 >
-                  Ver Demo
+                  View Demo
                 </Button>
               </Link>
             </motion.div>
@@ -185,8 +185,8 @@ export default function HeroSection() {
                     {/* App content */}
                     <div className="flex-1 p-4 space-y-4">
                       <div className="space-y-2">
-                        <h3 className="text-white font-bold">Olá, Corredor!</h3>
-                        <p className="text-white/60 text-sm">Vamos acompanhar seu progresso</p>
+                        <h3 className="text-white font-bold">Hello, Runner!</h3>
+                        <p className="text-white/60 text-sm">{"Let's track your progress"}</p>
                       </div>
 
                       <motion.div
@@ -196,7 +196,7 @@ export default function HeroSection() {
                         transition={{ delay: 1, duration: 0.5 }}
                       >
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-white/80 text-sm">Distância Total</span>
+                          <span className="text-white/80 text-sm">Total Distance</span>
                           <span className="text-white font-bold">142.5 km</span>
                         </div>
                         <div className="h-2 bg-white/10 rounded-full overflow-hidden">
@@ -208,7 +208,7 @@ export default function HeroSection() {
                           />
                         </div>
                         <div className="flex justify-between text-xs text-white/60 mt-1">
-                          <span>Meta: 200 km</span>
+                          <span>Goal: 200 km</span>
                           <span>65%</span>
                         </div>
                       </motion.div>
@@ -222,7 +222,7 @@ export default function HeroSection() {
                         >
                           <Flame className="h-5 w-5 text-red-500 mb-2" />
                           <div className="text-white font-bold text-lg">12,450</div>
-                          <div className="text-white/60 text-xs">Calorias</div>
+                          <div className="text-white/60 text-xs">Calories</div>
                         </motion.div>
 
                         <motion.div
@@ -233,7 +233,7 @@ export default function HeroSection() {
                         >
                           <Timer className="h-5 w-5 text-amber-500 mb-2" />
                           <div className="text-white font-bold text-lg">5:24</div>
-                          <div className="text-white/60 text-xs">Ritmo Médio</div>
+                          <div className="text-white/60 text-xs">Average Pace</div>
                         </motion.div>
                       </div>
 
@@ -268,7 +268,7 @@ export default function HeroSection() {
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        Iniciar Corrida
+                        Start Race
                       </motion.button>
                     </div>
                   </div>
@@ -294,7 +294,7 @@ export default function HeroSection() {
                 </div>
                 <div>
                   <div className="text-white font-bold">350</div>
-                  <div className="text-white/60 text-xs">kcal/hora</div>
+                  <div className="text-white/60 text-xs">kcal/hour</div>
                 </div>
               </div>
             </motion.div>
@@ -312,7 +312,7 @@ export default function HeroSection() {
                 </div>
                 <div>
                   <div className="text-white font-bold">+15%</div>
-                  <div className="text-white/60 text-xs">esta semana</div>
+                  <div className="text-white/60 text-xs">this week</div>
                 </div>
               </div>
             </motion.div>

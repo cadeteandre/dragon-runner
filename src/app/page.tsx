@@ -1,11 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { ChevronRight, Flame, Timer, BarChart3 } from "lucide-react"
-import DragonLogo from "@/components/dragon-logo"
 import Header from "@/components/ui/header"
 import Hero from "@/components/ui/hero"
 import Stats from "@/components/ui/stats"

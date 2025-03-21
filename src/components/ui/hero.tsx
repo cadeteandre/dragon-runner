@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "./button";
 import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { SignedOut, SignInButton } from "@clerk/nextjs";
 
 const Hero = () => {
     return (  
@@ -41,14 +42,16 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
           >
-            <Link href="/register">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-red-500 to-amber-500 hover:from-red-600 hover:to-amber-600 text-white border-0 h-14 px-8 text-lg rounded-xl shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all"
-              >
-                Start Now <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+            <SignedOut>
+              <SignInButton>
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-red-500 to-amber-500 hover:from-red-600 hover:to-amber-600 text-white border-0 h-14 px-8 text-lg rounded-xl shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all"
+                >
+                  Start Now <ChevronRight className="ml-2 h-5 w-5" />
+                </Button>
+              </SignInButton>
+            </SignedOut>
             <Link href="#demo">
               <Button
                 size="lg"

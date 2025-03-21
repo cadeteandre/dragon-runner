@@ -27,7 +27,7 @@ export default function LoginPage() {
           <CardDescription>Enter your credentials to access your account</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -55,12 +55,12 @@ export default function LoginPage() {
               />
             </div>
           </CardContent>
-          <CardFooter className="flex flex-col space-y-4">
+          <CardFooter className="flex flex-col space-y-4 pt-6">
             <Button type="submit" className="w-full">
               Login
             </Button>
             <div className="text-center text-sm">
-              Don't have an account?{" "}
+            {"Don't have an account? "}
               <Link href="/register" className="text-primary hover:underline">
                 Sign up
               </Link>

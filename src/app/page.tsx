@@ -81,7 +81,6 @@ export default function HeroSection() {
           </defs>
         </svg>
       </motion.div>
-      <Header />
       {/* Hero content */}
       <div className="relative z-10 container mx-auto px-4 pt-20 pb-32 md:pt-32 md:pb-40">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">

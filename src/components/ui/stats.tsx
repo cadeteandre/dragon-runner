@@ -126,7 +126,7 @@ const Stats = () => {
 
       {/* Floating badges */}
       <motion.div
-        className="absolute -left-2 top-70 bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/10 shadow-xl z-20"
+        className="absolute -left-2 bottom-52 bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/10 shadow-xl z-20"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2.5, duration: 0.5 }}
@@ -144,7 +144,7 @@ const Stats = () => {
       </motion.div>
 
       <motion.div
-        className="absolute -right-2 bottom-35 bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/10 shadow-xl z-20"
+        className="absolute -right-2 bottom-36 bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/10 shadow-xl z-20"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2.7, duration: 0.5 }}

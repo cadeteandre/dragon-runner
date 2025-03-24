@@ -44,12 +44,17 @@ const Hero = () => {
           >
             <SignedOut>
               <SignInButton>
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-red-500 to-amber-500 hover:from-red-600 hover:to-amber-600 text-white border-0 h-14 px-8 text-lg rounded-xl shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all"
-                >
-                  Start Now <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
+                <div className="flex gap-2">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-red-500 to-amber-500 hover:from-red-600 hover:to-amber-600 text-white border-0 h-14 px-8 text-lg rounded-xl shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all"
+                  >
+                    Start Now <ChevronRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Button className="bg-gradient-to-r from-red-500 to-amber-500 hover:from-red-600 hover:to-amber-600 text-white border-0 h-14 px-8 text-lg rounded-xl shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all"
+                  >
+                    Login</Button>
+                </div>
               </SignInButton>
             </SignedOut>
             <Link href="#demo">

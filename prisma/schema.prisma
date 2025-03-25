@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model workout {
+  id                      BigInt   @id @default(autoincrement())
+  external_user_id        String   @db.VarChar(50)
+  workout_datetime        DateTime @default(now()) @db.Timestamptz(6)
+  distance_km             Decimal  @db.Decimal(5, 2)
+  duration_minutes        Int
+  calories_burned_kcal    Int
+  average_pace_km_per_min Decimal  @db.Decimal(4, 2)
+}

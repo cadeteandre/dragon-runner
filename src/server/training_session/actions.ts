@@ -1,26 +1,26 @@
 "use server";
 
 import { currentUser } from "@clerk/nextjs/server";
-import { PrismaClient, workout} from "@prisma/client";
+import { PrismaClient, workout } from "@prisma/client";
+import { Decimal } from "@prisma/client/runtime/library";
+import { WorkoutInput } from "@/types/workout";
 
 const prisma = new PrismaClient();
 
-export async function createOrUpdateWorkout(workout: workout) {
-    await prisma.workout.upsert({
-        where: { id: workout.id },
-        update: {
-            external_user_id: workout.external_user_id,
-            workout_datetime: workout.workout_datetime,
-            distance_km: workout.distance_km,
-            duration_minutes: workout.duration_minutes,
-            calories_burned_kcal: workout.calories_burned_kcal,
-            average_pace_km_per_min: workout.average_pace_km_per_min
-        },
-        create: {
-            ...workout,
-            id: undefined,
-        },
-    })
+function convertToWorkout(input: WorkoutInput): Omit<workout, 'id'> {
+    return {
+        ...input,
+        distance_km: new Decimal(input.distance_km.toString()),
+        average_pace_km_per_min: new Decimal(input.average_pace_km_per_min.toString())
+    };
+}
+
+export async function createOrUpdateWorkout(input: WorkoutInput) {
+    const workoutWithDecimal = convertToWorkout(input);
+
+    await prisma.workout.create({
+        data: workoutWithDecimal
+    });
 }
 
 export async function getWorkout() {

@@ -1,29 +1,13 @@
-"use client"
-
-import { useState } from "react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Calendar, Clock, Flame, Home, Plus, BarChart3, User, LogOut, ChevronDown, Search } from "lucide-react"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+import { TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
+import { TabsContent } from "@/components/ui/tabs";
+import { Calendar, Flame, Clock, Table } from "lucide-react";
 import { Badge } from "@/components/ui/badge"
-import DashboardForm from "./_components/dashboarForm"
 
-export default function DashboardPage() {
-  const [activeTab, setActiveTab] = useState("overview")
+const DashboardTable = () => {
 
-  // Mock data for workouts
+      // Mock data for workouts
   const workouts = [
     {
       id: 1,
@@ -108,121 +92,8 @@ export default function DashboardPage() {
     const seconds = Math.round((pace - minutes) * 60)
     return `${minutes}:${seconds.toString().padStart(2, "0")}`
   }
-
-  return (
-    <div className="flex min-h-screen bg-gray-100 dark:bg-gray-950">
-      {/* Sidebar */}
-      <div className="hidden md:flex w-64 flex-col bg-white dark:bg-gray-900 border-r dark:border-gray-800 shadow-sm">
-        <div className="p-4 border-b dark:border-gray-800">
-          <div className="flex items-center gap-2 font-bold text-xl">
-            <span className="text-red-500">Dragon</span>
-            <span className="dark:text-white">Runner</span>
-          </div>
-        </div>
-        <div className="flex-1 py-4 px-2 space-y-1">
-          <Button variant="ghost" className="w-full justify-start" asChild>
-            <a href="#" className="flex items-center">
-              <Home className="mr-2 h-4 w-4" />
-              Dashboard
-            </a>
-          </Button>
-          <Button variant="ghost" className="w-full justify-start" asChild>
-            <a href="#" className="flex items-center">
-              <Calendar className="mr-2 h-4 w-4" />
-              Corridas
-            </a>
-          </Button>
-          <Button variant="ghost" className="w-full justify-start" asChild>
-            <a href="#" className="flex items-center">
-              <BarChart3 className="mr-2 h-4 w-4" />
-              Estatísticas
-            </a>
-          </Button>
-          <Button variant="ghost" className="w-full justify-start" asChild>
-            <a href="#" className="flex items-center">
-              <User className="mr-2 h-4 w-4" />
-              Perfil
-            </a>
-          </Button>
-        </div>
-        <div className="p-4 border-t dark:border-gray-800">
-          <Button
-            variant="ghost"
-            className="w-full justify-start text-red-500 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/50"
-          >
-            <LogOut className="mr-2 h-4 w-4" />
-            Sair
-          </Button>
-        </div>
-      </div>
-
-      {/* Main content */}
-      <div className="flex-1 flex flex-col">
-        {/* Header */}
-        <header className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b dark:border-gray-800 shadow-sm">
-          <div className="flex h-16 items-center px-4 md:px-6">
-            <div className="md:hidden font-bold text-xl mr-4">
-              <span className="text-red-500">DR</span>
-            </div>
-            <div className="flex-1 flex items-center gap-4 md:gap-8">
-              <form className="hidden md:flex items-center relative w-full max-w-md">
-                <Search className="absolute left-2.5 h-4 w-4 text-gray-500 dark:text-gray-400" />
-                <Input
-                  type="search"
-                  placeholder="Buscar corridas..."
-                  className="pl-8 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 w-full"
-                />
-              </form>
-              <div className="ml-auto flex items-center gap-4">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="outline" size="sm" className="hidden md:flex">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Outubro 2023
-                      <ChevronDown className="ml-2 h-4 w-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuLabel>Filtrar por período</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>Outubro 2023</DropdownMenuItem>
-                    <DropdownMenuItem>Setembro 2023</DropdownMenuItem>
-                    <DropdownMenuItem>Agosto 2023</DropdownMenuItem>
-                    <DropdownMenuItem>Últimos 3 meses</DropdownMenuItem>
-                    <DropdownMenuItem>Últimos 6 meses</DropdownMenuItem>
-                    <DropdownMenuItem>Este ano</DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>Período personalizado</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <div className="h-8 w-8 rounded-full bg-gradient-to-br from-red-500 to-amber-500 flex items-center justify-center text-white font-medium">
-                  JD
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        {/* Main content */}
-        <main className="flex-1 overflow-auto p-4 md:p-6">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6">
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
-              <p className="text-gray-500 dark:text-gray-400">Gerencie e acompanhe suas corridas</p>
-            </div>
-            <Button className="mt-4 md:mt-0 bg-gradient-to-r from-red-500 to-amber-500 hover:from-red-600 hover:to-amber-600 text-white border-0">
-              <Plus className="mr-2 h-4 w-4" />
-              Nova Corrida
-            </Button>
-          </div>
-
-          <Tabs defaultValue="overview" className="space-y-4" onValueChange={setActiveTab}>
-            <TabsList className="grid grid-cols-3 md:w-[400px]">
-              <TabsTrigger value="overview">Visão Geral</TabsTrigger>
-              <TabsTrigger value="workouts">Corridas</TabsTrigger>
-              <TabsTrigger value="add">Adicionar</TabsTrigger>
-            </TabsList>
-
+    return (  
+        <>
             <TabsContent value="overview" className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card>
@@ -458,11 +329,8 @@ export default function DashboardPage() {
                 </CardContent>
               </Card>
             </TabsContent>
-            <DashboardForm />
-          </Tabs>
-        </main>
-      </div>
-    </div>
-  )
+        </>
+    );
 }
-
+ 
+export default DashboardTable;

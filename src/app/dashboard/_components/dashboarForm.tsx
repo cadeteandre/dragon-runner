@@ -13,8 +13,7 @@ const DashboardForm = () => {
     async function handleSubmit(formData: FormData) {
         const formattedDate = `${formData.get('date')}T${formData.get('time')}:00Z`;
 
-        const newWorkout: WorkoutInput = {
-            external_user_id: "user123", // This should come from auth context
+        const newWorkout = {
             workout_datetime: new Date(formattedDate),
             distance_km: Number(formData.get('distance')),
             duration_minutes: Number(formData.get('duration')),

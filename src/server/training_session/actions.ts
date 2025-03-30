@@ -15,8 +15,17 @@ function convertToWorkout(input: WorkoutInput): Omit<workout, 'id'> {
     };
 }
 
-export async function createOrUpdateWorkout(input: WorkoutInput) {
-    const workoutWithDecimal = convertToWorkout(input);
+export async function createOrUpdateWorkout(input: Omit<WorkoutInput, 'external_user_id'>) {
+    const user = await currentUser();
+    
+    if (!user) {
+        throw new Error("User not found");
+    }
+
+    const workoutWithDecimal = convertToWorkout({
+        ...input,
+        external_user_id: user.id
+    });
 
     await prisma.workout.create({
         data: workoutWithDecimal

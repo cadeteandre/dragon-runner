@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { BarChart3, Flame, Timer } from "lucide-react";
 import DragonLogo from "../dragon-logo";
+import { SignedIn } from "@clerk/clerk-react";
+import Link from "next/link";
 
 const Stats = () => {
     return (  
@@ -106,15 +108,19 @@ const Stats = () => {
               </div>
 
               {/* App footer */}
-              <div className="p-4 border-t border-white/10">
-                <motion.button
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-red-500 to-amber-500 text-white font-bold"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Start Race
-                </motion.button>
-              </div>
+              <SignedIn>
+                <Link href="/dashboard">
+                  <div className="p-4 border-t border-white/10">
+                    <motion.button
+                      className="w-full py-3 rounded-xl bg-gradient-to-r from-red-500 to-amber-500 text-white font-bold"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Start Race
+                    </motion.button>
+                  </div>
+                </Link>
+              </SignedIn>
             </div>
           </div>
         </div>

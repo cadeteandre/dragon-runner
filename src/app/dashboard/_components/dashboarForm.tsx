@@ -30,14 +30,14 @@ const DashboardForm = () => {
         <TabsContent value="add" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>Adicionar Nova Corrida</CardTitle>
-                <CardDescription>Registre os detalhes da sua corrida</CardDescription>
+                <CardTitle>Add New Run</CardTitle>
+                <CardDescription>Record the details of your run</CardDescription>
               </CardHeader>
               <CardContent>
                 <form action={handleSubmit} className="space-y-6">
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="workout-date">Data</Label>
+                      <Label htmlFor="workout-date">Date</Label>
                       <Input
                         name="date"
                         id="workout-date"
@@ -47,7 +47,7 @@ const DashboardForm = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="workout-time">Hora</Label>
+                      <Label htmlFor="workout-time">Time</Label>
                       <Input
                         name="time"
                         id="workout-time"
@@ -60,7 +60,7 @@ const DashboardForm = () => {
 
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="distance">Distância (km)</Label>
+                      <Label htmlFor="distance">Distance (km)</Label>
                       <div className="relative">
                         <Input
                           name="distance"
@@ -76,7 +76,7 @@ const DashboardForm = () => {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="duration">Duração (minutos)</Label>
+                      <Label htmlFor="duration">Duration (minutes)</Label>
                       <div className="relative">
                         <Input
                           name="duration"
@@ -94,7 +94,7 @@ const DashboardForm = () => {
 
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="calories">Calorias Queimadas (kcal)</Label>
+                      <Label htmlFor="calories">Calories Burned (kcal)</Label>
                       <div className="relative">
                         <Input
                           name="calories"
@@ -109,7 +109,7 @@ const DashboardForm = () => {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="pace">Ritmo Médio (min/km)</Label>
+                      <Label htmlFor="pace">Average Pace (min/km)</Label>
                       <div className="relative">
                         <Input
                           name="pace"
@@ -125,38 +125,38 @@ const DashboardForm = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="notes">Notas (opcional)</Label>
+                    <Label htmlFor="notes">Notes (optional)</Label>
                     <textarea
                       id="notes"
                       rows={3}
-                      placeholder="Adicione notas sobre sua corrida..."
+                      placeholder="Add notes about your run..."
                       className="w-full p-2 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800"
                     ></textarea>
                   </div>
 
                   <div className="space-y-2">
-                    <Label>Tipo de Corrida</Label>
+                    <Label>Run Type</Label>
                     <div className="grid grid-cols-3 gap-2">
                       <Button
                         type="button"
                         variant="outline"
                         className="border-amber-500 text-amber-500 bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/20 dark:hover:bg-amber-950/40"
                       >
-                        Curta
+                        Short
                       </Button>
                       <Button
                         type="button"
                         variant="outline"
                         className="border-blue-500 text-blue-500 bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/20 dark:hover:bg-blue-950/40"
                       >
-                        Média
+                        Medium
                       </Button>
                       <Button
                         type="button"
                         variant="outline"
                         className="border-green-500 text-green-500 bg-green-50 hover:bg-green-100 dark:bg-green-950/20 dark:hover:bg-green-950/40"
                       >
-                        Longa
+                        Long
                       </Button>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ const DashboardForm = () => {
                     type="submit"
                     className="w-full bg-gradient-to-r from-red-500 to-amber-500 hover:from-red-600 hover:to-amber-600 text-white border-0"
                   >
-                    Salvar Corrida
+                    Save Run
                   </Button>
                 </form>
               </CardContent>

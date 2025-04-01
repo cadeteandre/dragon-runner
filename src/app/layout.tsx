@@ -4,7 +4,9 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
-import Header from "@/components/ui/header";
+import { usePathname } from "next/navigation"
+import Header from "@/components/ui/header"
+import { DashboardHeader } from "@/components/dashboard-header"
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -18,16 +20,19 @@ import Header from "@/components/ui/header";
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
+  const pathname = usePathname()
+  const isDashboard = pathname?.startsWith("/dashboard")
+
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="pt-BR">
         <body
           // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Header />
+          {isDashboard ? <DashboardHeader /> : <Header />}
           {children}
         </body>
       </html>

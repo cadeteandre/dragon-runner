@@ -114,22 +114,22 @@ export default function DashboardPage() {
         </div>
         <div className="flex-1 py-4 px-2 space-y-1">
           <Button variant="ghost" className="w-full justify-start" asChild>
-            <a href="#" className="flex items-center">
+            <div onClick={() => setActiveTab('overview')} className="flex items-center cursor-pointer">
               <Home className="mr-2 h-4 w-4" />
               Dashboard
-            </a>
+            </div>
           </Button>
           <Button variant="ghost" className="w-full justify-start" asChild>
-            <a href="#" className="flex items-center">
+            <div onClick={() => setActiveTab('workouts')} className="flex items-center cursor-pointer">
               <Calendar className="mr-2 h-4 w-4" />
               Runs
-            </a>
+            </div>
           </Button>
           <Button variant="ghost" className="w-full justify-start" asChild>
-            <a href="#" className="flex items-center">
+            <div className="flex items-center cursor-pointer">
               <BarChart3 className="mr-2 h-4 w-4" />
               Statistics
-            </a>
+            </div>
           </Button>
           <Button variant="ghost" className="w-full justify-start" asChild>
             <a href="#" className="flex items-center">
